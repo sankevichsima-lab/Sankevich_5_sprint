@@ -25,7 +25,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	sliseStr := strings.Split(datastring, ",")
 
 	if len(sliseStr) != 3 {
-		return fmt.Errorf("lenght of slise not 3")
+		return fmt.Errorf("lenght of slise is not 3")
 	}
 
 	steps, err := strconv.Atoi(sliseStr[0])
@@ -52,7 +52,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	}
 
 	if time <= 0 {
-		return fmt.Errorf("time = 0")
+		return fmt.Errorf("time <= 0")
 	}
 
 	t.Duration = time
