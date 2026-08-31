@@ -15,16 +15,16 @@ const (
 
 func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	if steps <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("steps must be greater than zero")
 	}
 	if weight <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("weight must be greater than zero")
 	}
 	if height <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("height must be greater than zero")
 	}
 	if duration <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("duration must be greater than zero")
 	}
 
 	meanSpeed := MeanSpeed(steps, height, duration)
@@ -36,16 +36,16 @@ func WalkingSpentCalories(steps int, weight, height float64, duration time.Durat
 
 func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	if steps <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("steps must be greater than zero")
 	}
 	if weight <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("weight must be greater than zero")
 	}
 	if height <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("height must be greater than zero")
 	}
 	if duration <= 0 {
-		return 0, fmt.Errorf("incorrect value")
+		return 0, fmt.Errorf("duration must be greater than zero")
 	}
 
 	meanSpeed := MeanSpeed(steps, height, duration)

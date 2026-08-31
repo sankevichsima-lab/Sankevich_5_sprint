@@ -20,12 +20,14 @@ func Info(dataset []string, dp DataParser) {
 
 		if err != nil {
 			log.Printf("%v", err)
+			continue
 		}
 
 		result, err := dp.ActionInfo()
 
 		if err != nil {
 			log.Printf("%v", err)
+			continue
 		}
 
 		fmt.Println(result)

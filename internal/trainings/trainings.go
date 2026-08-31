@@ -31,7 +31,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	steps, err := strconv.Atoi(sliseStr[0])
 
 	if err != nil {
-		return fmt.Errorf("%w", err)
+		return fmt.Errorf("invalid steps format: %w", err)
 	}
 
 	if steps <= 0 {
@@ -48,7 +48,7 @@ func (t *Training) Parse(datastring string) (err error) {
 	time, err := time.ParseDuration(sliseStr[2])
 
 	if err != nil {
-		return fmt.Errorf("%w", err)
+		return fmt.Errorf("invalid time format: %w", err)
 	}
 
 	if time <= 0 {
@@ -67,13 +67,13 @@ func (t Training) ActionInfo() (string, error) {
 	if t.TrainingType == "Ходьба" {
 		callWalk, err = spentenergy.WalkingSpentCalories(t.Steps, t.Weight, t.Height, t.Duration)
 		if err != nil {
-			return "", fmt.Errorf("%w", err)
+			return "", fmt.Errorf("invalid calorie format for walking: %w", err)
 		}
 	}
 	if t.TrainingType == "Бег" {
 		callWalk, err = spentenergy.RunningSpentCalories(t.Steps, t.Weight, t.Height, t.Duration)
 		if err != nil {
-			return "", fmt.Errorf("%w", err)
+			return "", fmt.Errorf("invalid calorie format for running: %w", err)
 		}
 	}
 	if t.TrainingType != "Ходьба" && t.TrainingType != "Бег" {
